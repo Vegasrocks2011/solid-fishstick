@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section 1: The nature and variety of living organisms — IGCSE Biology revision</title>
+<style>
+:root{
+  --ink:#0E2A26;
+  --ink-soft:#43605B;
+  --paper:#FBFCFA;
+  --panel:#FFFFFF;
+  --rule:#D8E2DD;
+  --rule-soft:#EAF0ED;
+  --plants:#3F7D4E;
+  --animals:#A63D57;
+  --fungi:#7A5CA8;
+  --protoctists:#1F7A8C;
+  --bacteria:#A8760F;
+  --viruses:#66727A;
+  --red:#B23A3A;
+  --amber:#B8860B;
+  --green:#3F7D4E;
+  --serif:'Charter','Bitstream Charter','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  --sans:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.55;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- masthead ---------- */
+header.masthead{background:var(--ink);color:#EAF2EE;padding:34px 0 0}
+.masthead h1{
+  font-family:var(--serif);font-weight:600;font-size:2.1rem;line-height:1.2;
+  margin:0 0 6px;letter-spacing:-0.01em;
+}
+.masthead .spec{color:#9FBDB4;font-size:0.9rem;margin:0 0 22px}
+.keyline{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:20px}
+.keyline span{
+  font-size:0.76rem;padding:4px 10px;border-radius:999px;
+  background:rgba(255,255,255,.09);color:#CFE0DA;border:1px solid rgba(255,255,255,.14);
+}
+
+/* ---------- tabs ---------- */
+nav.tabs{background:var(--ink);border-top:1px solid rgba(255,255,255,.12);position:sticky;top:0;z-index:20}
+nav.tabs .wrap{display:flex;gap:0;overflow-x:auto;scrollbar-width:thin}
+nav.tabs button{
+  appearance:none;background:none;border:0;border-bottom:3px solid transparent;
+  color:#A9C4BC;font-family:var(--sans);font-size:0.9rem;padding:13px 16px;
+  cursor:pointer;white-space:nowrap;
+}
+nav.tabs button:hover{color:#fff}
+nav.tabs button[aria-selected="true"]{color:#fff;border-bottom-color:#8FCBA8;font-weight:600}
+nav.tabs button:focus-visible{outline:2px solid #8FCBA8;outline-offset:-4px}
+
+main{padding:30px 0 70px}
+.panel[hidden]{display:none}
+h2{font-family:var(--serif);font-size:1.55rem;font-weight:600;margin:0 0 4px;letter-spacing:-0.01em}
+.lede{color:var(--ink-soft);margin:0 0 26px;max-width:62ch}
+h3{font-family:var(--serif);font-size:1.15rem;margin:30px 0 10px;font-weight:600}
+
+/* ---------- statement rows with RAG ---------- */
+.stmt{
+  background:var(--panel);border:1px solid var(--rule);border-radius:4px;
+  padding:14px 16px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start;
+}
+.stmt .body{flex:1;min-width:0}
+.stmt .ref{font-size:0.72rem;color:var(--ink-soft);display:block;margin-bottom:3px}
+.stmt p{margin:0}
+.stmt ul{margin:8px 0 0;padding-left:20px}
+.stmt li{margin-bottom:3px}
+.rag{display:flex;gap:5px;flex:none;padding-top:2px}
+.rag button{
+  width:30px;height:30px;border-radius:50%;border:1.5px solid var(--rule);
+  background:#fff;color:var(--ink-soft);font-size:0.78rem;font-weight:700;cursor:pointer;
+  font-family:var(--sans);line-height:1;
+}
+.rag button:hover{border-color:var(--ink-soft)}
+.rag button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.rag button[data-on="R"]{background:var(--red);border-color:var(--red);color:#fff}
+.rag button[data-on="A"]{background:var(--amber);border-color:var(--amber);color:#fff}
+.rag button[data-on="G"]{background:var(--green);border-color:var(--green);color:#fff}
+
+/* ---------- organism specimen panels ---------- */
+.group{
+  background:var(--panel);border:1px solid var(--rule);border-radius:4px;
+  margin-bottom:16px;overflow:hidden;
+}
+.group > .head{
+  display:flex;align-items:center;gap:12px;padding:12px 16px;
+  border-bottom:1px solid var(--rule-soft);
+}
+.group .dot{width:12px;height:12px;border-radius:50%;flex:none}
+.group .name{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.group .tag{
+  margin-left:auto;font-size:0.72rem;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:999px;padding:2px 9px;
+}
+.group .cols{display:grid;grid-template-columns:1fr 260px;gap:0}
+.group .facts{padding:14px 16px}
+.group .facts ul{margin:0;padding-left:19px}
+.group .facts li{margin-bottom:6px}
+.group .facts li b{font-weight:600}
+.group .eg{padding:14px 16px;border-left:1px solid var(--rule-soft);background:#FAFCFB}
+.group .eg h4{margin:0 0 8px;font-size:0.78rem;color:var(--ink-soft);font-weight:600}
+.group .eg dl{margin:0;font-size:0.9rem}
+.group .eg dt{font-style:italic;font-weight:600;margin-top:8px}
+.group .eg dt:first-child{margin-top:0}
+.group .eg dd{margin:0 0 0 0;color:var(--ink-soft)}
+.notliving{background:#F4F6F7}
+
+/* ---------- comparison table ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:0.87rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+thead th{background:var(--panel);font-size:0.8rem;border-bottom:2px solid var(--rule)}
+thead th span.swatch{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+tbody th{font-weight:600;background:#FAFCFB;border-right:1px solid var(--rule-soft);width:170px}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+td.no{color:var(--ink-soft)}
+
+/* ---------- MCQ ---------- */
+.q{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;margin-bottom:14px}
+.q .stem{font-weight:600;margin:0 0 12px}
+.q .stem .n{color:var(--ink-soft);font-weight:400;margin-right:8px}
+.opts{display:grid;gap:7px}
+.opt{
+  text-align:left;background:#fff;border:1px solid var(--rule);border-radius:3px;
+  padding:9px 12px;cursor:pointer;font-family:var(--sans);font-size:0.94rem;color:var(--ink);
+  display:flex;gap:10px;align-items:baseline;
+}
+.opt:hover:not([disabled]){border-color:var(--ink-soft);background:#F7FAF8}
+.opt:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.opt .letter{font-weight:700;color:var(--ink-soft);flex:none}
+.opt[data-state="correct"]{border-color:var(--green);background:#F1F8F3}
+.opt[data-state="correct"] .letter{color:var(--green)}
+.opt[data-state="wrong"]{border-color:var(--red);background:#FBF3F3}
+.opt[data-state="wrong"] .letter{color:var(--red)}
+.opt[disabled]{cursor:default}
+.fb{margin:12px 0 0;padding:11px 13px;border-radius:3px;font-size:0.9rem;background:#F2F6F4;border:1px solid var(--rule)}
+.fb b{font-weight:600}
+.fb[hidden]{display:none}
+
+/* ---------- exam questions ---------- */
+.exam{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;margin-bottom:14px}
+.exam .stem{font-weight:600;margin:0 0 4px}
+.exam .marks{float:right;font-weight:600;color:var(--ink-soft);font-size:0.85rem}
+.exam .cue{color:var(--ink-soft);font-size:0.88rem;margin:0 0 12px}
+.exam textarea{
+  width:100%;min-height:82px;border:1px solid var(--rule);border-radius:3px;
+  padding:10px;font-family:var(--sans);font-size:0.94rem;color:var(--ink);resize:vertical;background:#FDFEFD;
+}
+.exam textarea:focus{outline:2px solid var(--ink);outline-offset:0}
+.reveal{
+  margin-top:10px;background:none;border:1px solid var(--ink);color:var(--ink);
+  border-radius:3px;padding:7px 14px;font-family:var(--sans);font-size:0.88rem;cursor:pointer;
+}
+.reveal:hover{background:var(--ink);color:#fff}
+.reveal:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ms{margin-top:12px;border:1px solid var(--rule);border-left:3px solid var(--green);border-radius:3px;padding:12px 14px;background:#F8FBF9}
+.ms[hidden]{display:none}
+.ms h4{margin:0 0 8px;font-size:0.8rem;color:var(--ink-soft);font-weight:600}
+.ms ul{margin:0;padding-left:19px;font-size:0.92rem}
+.ms li{margin-bottom:5px}
+.ms .warn{margin:10px 0 0;font-size:0.86rem;color:var(--red)}
+
+/* ---------- summary ---------- */
+.score{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.stat{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 20px;min-width:150px;flex:1}
+.stat .big{font-family:var(--serif);font-size:2.3rem;line-height:1;font-weight:600}
+.stat .lab{font-size:0.82rem;color:var(--ink-soft);margin-top:5px}
+.stat.r .big{color:var(--red)} .stat.a .big{color:var(--amber)} .stat.g .big{color:var(--green)}
+.todo{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;margin-bottom:16px}
+.todo h3{margin-top:0}
+.todo ol{margin:0;padding-left:20px}
+.todo li{margin-bottom:8px}
+.todo li .ref{color:var(--ink-soft);font-size:0.8rem}
+.empty{color:var(--ink-soft);font-style:italic}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.actions button{
+  background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:3px;
+  padding:9px 16px;font-family:var(--sans);font-size:0.9rem;cursor:pointer;
+}
+.actions button.ghost{background:none;color:var(--ink)}
+.actions button:hover{opacity:.88}
+.actions button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.mnemonic{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:0 0 24px}
+.mn{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:12px 14px}
+.mn .ltr{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--plants);line-height:1}
+.mn .wd{font-weight:600;font-size:0.95rem;margin-top:2px}
+.mn .de{font-size:0.85rem;color:var(--ink-soft);margin-top:3px}
+
+footer{border-top:1px solid var(--rule);color:var(--ink-soft);font-size:0.82rem;padding:20px 0 40px}
+
+@media (max-width:760px){
+  .group .cols{grid-template-columns:1fr}
+  .group .eg{border-left:0;border-top:1px solid var(--rule-soft)}
+  .masthead h1{font-size:1.6rem}
+  .stmt{flex-direction:column;gap:10px}
+}
+@media print{
+  nav.tabs,.rag,.actions,.reveal,header.masthead .keyline{display:none}
+  .panel[hidden]{display:block !important}
+  body{background:#fff}
+  .ms[hidden]{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <h1>The nature and variety of living organisms</h1>
+    <p class="spec">Section 1 &middot; Pearson Edexcel International GCSE Biology (Modular) &middot; specification points 1.1 to 1.4</p>
+    <div class="keyline">
+      <span>Plants</span><span>Animals</span><span>Fungi</span><span>Protoctists</span><span>Bacteria</span><span>Viruses</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap" role="tablist" aria-label="Revision sections">
+    <button role="tab" aria-selected="true" data-tab="characteristics">1.1 Characteristics</button>
+    <button role="tab" aria-selected="false" data-tab="eukaryotes">1.2 Eukaryotes</button>
+    <button role="tab" aria-selected="false" data-tab="prokaryotes">1.3–1.4 Bacteria &amp; viruses</button>
+    <button role="tab" aria-selected="false" data-tab="compare">Compare all six</button>
+    <button role="tab" aria-selected="false" data-tab="quiz">Quick check</button>
+    <button role="tab" aria-selected="false" data-tab="exam">Exam practice</button>
+    <button role="tab" aria-selected="false" data-tab="summary">My summary</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ 1.1 ============ -->
+<section class="panel" id="characteristics" role="tabpanel">
+  <h2>Characteristics of living organisms</h2>
+  <p class="lede">All living organisms share eight characteristics. Questions often ask for a stated number of them, so learn all eight rather than the five you can remember under pressure. The initials spell <b>MRS C GREN</b>.</p>
+
+  <div class="mnemonic" id="mnemonic"></div>
+
+  <h3>Rate your confidence</h3>
+  <div id="rag-11"></div>
+</section>
+
+<!-- ============ 1.2 ============ -->
+<section class="panel" id="eukaryotes" role="tabpanel" hidden>
+  <h2>The four eukaryotic groups</h2>
+  <p class="lede">Plants, animals, fungi and protoctists. Every group is defined by a short list of features — cell walls, chloroplasts, how they feed, how they store carbohydrate. Marks are lost by mixing up the cell wall materials.</p>
+  <div id="euk-groups"></div>
+
+  <h3>Rate your confidence</h3>
+  <div id="rag-12"></div>
+</section>
+
+<!-- ============ 1.3 / 1.4 ============ -->
+<section class="panel" id="prokaryotes" role="tabpanel" hidden>
+  <h2>Prokaryotes, pathogens and viruses</h2>
+  <p class="lede">Bacteria are prokaryotic: no nucleus, a circular chromosome, plasmids. Viruses are not living organisms at all, which is why they sit apart from every group on this page.</p>
+  <div id="pro-groups"></div>
+
+  <h3>Pathogens</h3>
+  <div class="group">
+    <div class="head"><span class="dot" style="background:var(--ink-soft)"></span><span class="name">What a pathogen is</span><span class="tag">1.4</span></div>
+    <div class="cols">
+      <div class="facts">
+        <ul>
+          <li>A <b>pathogen</b> is an organism that causes disease.</li>
+          <li>Pathogens may be <b>fungi, bacteria, protoctists or viruses</b> — not one group alone.</li>
+          <li>Being a pathogen is a way of living, not a taxonomic group. Most members of each group are harmless.</li>
+        </ul>
+      </div>
+      <div class="eg">
+        <h4>One pathogen from each group</h4>
+        <dl>
+          <dt>Plasmodium</dt><dd>protoctist — causes malaria</dd>
+          <dt>Pneumococcus</dt><dd>bacterium — causes pneumonia</dd>
+          <dt>HIV</dt><dd>virus — causes AIDS</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <h3>Rate your confidence</h3>
+  <div id="rag-13"></div>
+</section>
+
+<!-- ============ compare ============ -->
+<section class="panel" id="compare" role="tabpanel" hidden>
+  <h2>All six side by side</h2>
+  <p class="lede">The fastest way to answer a "give three differences between X and Y" question is to read down two columns of this table and pick the rows where they disagree.</p>
+  <div class="tablewrap"><table id="cmp"></table></div>
+  <p class="lede" style="margin-top:18px">A difference must name both organisms. "Has a cell wall" scores nothing; "the fungus has a cell wall made of chitin whereas the bacterium's is made of peptidoglycan" scores the mark.</p>
+</section>
+
+<!-- ============ quiz ============ -->
+<section class="panel" id="quiz" role="tabpanel">
+  <h2>Quick check</h2>
+  <p class="lede">Fourteen questions on the detail this section is examined on. You get one attempt at each — pick carefully, then read the feedback.</p>
+  <div id="quiz-list"></div>
+  <div class="actions"><button class="ghost" id="quiz-reset">Start the quiz again</button></div>
+</section>
+
+<!-- ============ exam ============ -->
+<section class="panel" id="exam" role="tabpanel" hidden>
+  <h2>Exam practice</h2>
+  <p class="lede">Write your answer first, then reveal the mark scheme and mark it yourself. The wording in the mark scheme is the wording that earns credit.</p>
+  <div id="exam-list"></div>
+</section>
+
+<!-- ============ summary ============ -->
+<section class="panel" id="summary" role="tabpanel" hidden>
+  <h2>My summary</h2>
+  <p class="lede">Built from your confidence ratings and your quiz answers. Nothing is saved when you close the page, so print or screenshot it before you go.</p>
+  <div class="score" id="summary-score"></div>
+  <div class="todo" id="summary-todo"></div>
+  <div class="todo" id="summary-quiz"></div>
+  <div class="actions">
+    <button id="print">Print this summary</button>
+    <button class="ghost" id="reset-all">Clear everything and start again</button>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  Content follows the Pearson Edexcel International GCSE in Biology (Modular) specification, Issue 2, September 2024, Section 1.
+</footer>
+
+<script>
+"use strict";
+
+/* ------------------------------------------------------------------ data */
+
+const MNEMONIC = [
+  ["M","Movement","They move."],
+  ["R","Respiration","They respire."],
+  ["S","Sensitivity","They respond to their surroundings."],
+  ["C","Control","They control their internal conditions."],
+  ["G","Growth","They grow and develop."],
+  ["R","Reproduction","They reproduce."],
+  ["E","Excretion","They excrete their waste."],
+  ["N","Nutrition","They require nutrition."]
+];
+
+const GROUPS = [
+  {
+    id:"plants", key:"Plants", ref:"1.2", colour:"var(--plants)", tag:"Eukaryotic",
+    facts:[
+      "Multicellular organisms.",
+      "Their cells contain <b>chloroplasts</b> and are able to carry out photosynthesis.",
+      "Their cells have cell walls made of <b>cellulose</b>.",
+      "They store carbohydrate as <b>starch or sucrose</b>."
+    ],
+    egs:[["Maize","a cereal — flowering plant"],["Peas or beans","a herbaceous legume"]]
+  },
+  {
+    id:"animals", key:"Animals", ref:"1.2", colour:"var(--animals)", tag:"Eukaryotic",
+    facts:[
+      "Multicellular organisms.",
+      "Their cells do <b>not</b> contain chloroplasts and cannot photosynthesise.",
+      "They have <b>no cell walls</b>.",
+      "They usually have <b>nervous coordination</b> and can move from place to place.",
+      "They often store carbohydrate as <b>glycogen</b>."
+    ],
+    egs:[["Humans","a mammal"],["Housefly, mosquito","insects"]]
+  },
+  {
+    id:"fungi", key:"Fungi", ref:"1.2", colour:"var(--fungi)", tag:"Eukaryotic",
+    facts:[
+      "Not able to carry out photosynthesis.",
+      "The body is usually organised into a <b>mycelium</b> made from thread-like structures called <b>hyphae</b>, which contain many nuclei.",
+      "Some examples are single-celled.",
+      "Their cells have walls made of <b>chitin</b>.",
+      "They feed by extracellular secretion of <b>digestive enzymes</b> onto food material and absorption of the organic products — <b>saprotrophic nutrition</b>.",
+      "They may store carbohydrate as <b>glycogen</b>."
+    ],
+    egs:[["Mucor","the typical hyphal structure"],["Yeast","single-celled"]]
+  },
+  {
+    id:"protoctists", key:"Protoctists", ref:"1.2", colour:"var(--protoctists)", tag:"Eukaryotic",
+    facts:[
+      "Microscopic <b>single-celled</b> organisms.",
+      "Some have features like an <b>animal cell</b>.",
+      "Others have <b>chloroplasts</b> and are more like plants.",
+      "Some are pathogenic."
+    ],
+    egs:[["Amoeba","animal-like, lives in pond water"],["Chlorella","plant-like, has chloroplasts"],["Plasmodium","pathogen — causes malaria"]]
+  }
+];
+
+const PRO = [
+  {
+    id:"bacteria", key:"Bacteria", ref:"1.3", colour:"var(--bacteria)", tag:"Prokaryotic",
+    facts:[
+      "Microscopic <b>single-celled</b> organisms.",
+      "They have a <b>cell wall, cell membrane, cytoplasm and plasmids</b>.",
+      "They <b>lack a nucleus</b> but contain a <b>circular chromosome</b> of DNA.",
+      "Some can photosynthesise, but most feed off other living or dead organisms."
+    ],
+    egs:[["Lactobacillus bulgaricus","rod-shaped — makes yoghurt from milk"],["Pneumococcus","spherical — pathogen causing pneumonia"]]
+  },
+  {
+    id:"viruses", key:"Viruses", ref:"1.4", colour:"var(--viruses)", tag:"Not living", dim:true,
+    facts:[
+      "<b>Not living organisms.</b> They are small particles, smaller than bacteria.",
+      "<b>Parasitic</b> — they can reproduce only inside living cells.",
+      "They infect every type of living organism.",
+      "Wide variety of shapes and sizes.",
+      "<b>No cellular structure</b>, but they have a <b>protein coat</b> and contain one type of nucleic acid, <b>either DNA or RNA</b>."
+    ],
+    egs:[["Tobacco mosaic virus","discolours tobacco leaves by preventing chloroplast formation"],["Influenza virus","causes flu"],["HIV","causes AIDS"]]
+  }
+];
+
+const RAG_ITEMS = {
+  "rag-11":[
+    {ref:"1.1", text:"I can list all eight characteristics shared by living organisms."},
+    {ref:"1.1", text:"I can tell the difference between excretion (removing waste made by the organism) and simply getting rid of undigested food."},
+    {ref:"1.1", text:"I can explain what is meant by controlling internal conditions, and give an example."}
+  ],
+  "rag-12":[
+    {ref:"1.2", text:"I can describe the common features of plants, including cellulose walls and storing starch or sucrose."},
+    {ref:"1.2", text:"I can describe the common features of animals, including no cell walls and nervous coordination."},
+    {ref:"1.2", text:"I can describe the common features of fungi, including chitin walls, hyphae and the mycelium."},
+    {ref:"1.2", text:"I can define saprotrophic nutrition using the words extracellular, digestive enzymes and absorption."},
+    {ref:"1.2", text:"I can describe protoctists and explain how Amoeba and Chlorella differ from each other."},
+    {ref:"1.2", text:"I can name a named example for every eukaryotic group."}
+  ],
+  "rag-13":[
+    {ref:"1.3", text:"I can describe the common features of bacteria, including the circular chromosome and plasmids."},
+    {ref:"1.3", text:"I can name Lactobacillus bulgaricus and Pneumococcus and say what each one does."},
+    {ref:"1.4", text:"I can define a pathogen and name one from each of four groups."},
+    {ref:"1.4", text:"I can give three structural differences between a virus and a cell."},
+    {ref:"1.4", text:"I can explain why viruses are not classified as living organisms."}
+  ]
+};
+
+const CMP_COLS = [
+  ["Plants","var(--plants)"],["Animals","var(--animals)"],["Fungi","var(--fungi)"],
+  ["Protoctists","var(--protoctists)"],["Bacteria","var(--bacteria)"],["Viruses","var(--viruses)"]
+];
+
+const CMP_ROWS = [
+  ["Living?",["Yes","Yes","Yes","Yes","Yes","No — a particle, not an organism"]],
+  ["Cells",["Multicellular","Multicellular","Mycelium of hyphae; some single-celled","Single-celled","Single-celled","No cellular structure"]],
+  ["Nucleus",["Yes","Yes","Yes — hyphae contain many nuclei","Yes","No — circular chromosome instead","No"]],
+  ["Cell wall",["Yes — cellulose","No","Yes — chitin","Varies with the organism","Yes","No — a protein coat"]],
+  ["Chloroplasts",["Yes","No","No","In the plant-like ones","In the photosynthetic few","No"]],
+  ["Genetic material",["DNA in a nucleus","DNA in a nucleus","DNA in nuclei","DNA in a nucleus","Circular chromosome plus plasmids","One type only — DNA or RNA"]],
+  ["Feeding",["Photosynthesis","Ingest other organisms","Saprotrophic — enzymes out, products in","Varies — animal-like or plant-like","Mostly off living or dead organisms","None — parasitic, replicates in host cells"]],
+  ["Carbohydrate store",["Starch or sucrose","Often glycogen","May be glycogen","—","—","—"]],
+  ["Named examples",["Maize; peas or beans","Humans; housefly; mosquito","Mucor; yeast","Amoeba; Chlorella; Plasmodium","Lactobacillus bulgaricus; Pneumococcus","Tobacco mosaic virus; influenza; HIV"]]
+];
+
+const QUIZ = [
+  {q:"Which group does Chlorella belong to?",
+   o:["Animals","Bacteria","Plants","Protoctists"],a:3,
+   fb:"Chlorella is a protoctist. It has chloroplasts, which makes it plant-like, but it is a microscopic single-celled organism — and that is what places it with the protoctists."},
+  {q:"Fungal cell walls are made of:",
+   o:["Cellulose","Chitin","Peptidoglycan","Protein"],a:1,
+   fb:"Chitin. Cellulose is plants and peptidoglycan is bacteria — this is the single most commonly swapped fact in Section 1."},
+  {q:"Bacterial cell walls are made of:",
+   o:["Peptidoglycan","Chitin","Cellulose","Glycogen"],a:0,
+   fb:"Peptidoglycan. Glycogen is a carbohydrate store, not a wall material."},
+  {q:"Where is most of the genetic material in a bacterial cell?",
+   o:["In the nucleus","In a circular chromosome","In the plasmids","In the cell wall"],a:1,
+   fb:"A circular chromosome. Bacteria lack a nucleus. Plasmids are also DNA, but they are the small extra circles — not where most of the genetic material sits."},
+  {q:"What are plasmids?",
+   o:["Small circles of DNA in the cytoplasm","Folds of the cell membrane","The site of respiration","Storage granules of glycogen"],a:0,
+   fb:"Small circles of DNA in the cytoplasm, separate from the circular chromosome."},
+  {q:"Saprotrophic nutrition is best described as:",
+   o:["Engulfing food particles and digesting them inside the cell",
+      "Absorbing dissolved food directly across the cell membrane",
+      "Secreting digestive enzymes onto food outside the body, then absorbing the organic products",
+      "Making food from carbon dioxide and water using light"],a:2,
+   fb:"Enzymes go out, digested products come back in. Answers that say the fungus 'absorbs food' rather than absorbs the digested products lose the mark."},
+  {q:"Plants store carbohydrate as:",
+   o:["Glycogen","Starch or sucrose","Chitin","Glucose only"],a:1,
+   fb:"Starch or sucrose. Glycogen is the animal and fungal store."},
+  {q:"Which of these is not a living organism?",
+   o:["Yeast","Amoeba","Tobacco mosaic virus","Pneumococcus"],a:2,
+   fb:"Viruses are not living organisms. They have no cellular structure and can only reproduce inside a living host cell."},
+  {q:"A virus contains:",
+   o:["Both DNA and RNA","One type of nucleic acid, either DNA or RNA","A circular chromosome","No genetic material at all"],a:1,
+   fb:"One type of nucleic acid only — DNA or RNA — inside a protein coat."},
+  {q:"Which pair correctly matches an organism to its group?",
+   o:["Mucor — protoctist","Plasmodium — bacterium","Amoeba — protoctist","Lactobacillus bulgaricus — fungus"],a:2,
+   fb:"Amoeba is an animal-like protoctist that lives in pond water. Mucor is a fungus, Plasmodium is a protoctist and Lactobacillus bulgaricus is a bacterium."},
+  {q:"Which disease is caused by a protoctist?",
+   o:["Pneumonia","Malaria","AIDS","Influenza"],a:1,
+   fb:"Malaria, caused by Plasmodium. Pneumonia is bacterial (Pneumococcus); AIDS and flu are viral."},
+  {q:"Which statement about pathogens is correct?",
+   o:["Only bacteria and viruses can be pathogens",
+      "A pathogen is any microorganism",
+      "Pathogens may be fungi, bacteria, protoctists or viruses",
+      "All bacteria are pathogens"],a:2,
+   fb:"A pathogen is an organism that causes disease, and it may come from any of those four groups. Most bacteria are not pathogens."},
+  {q:"Mucor and yeast are both fungi. How do they differ?",
+   o:["Yeast is single-celled; Mucor has the typical hyphal structure",
+      "Mucor photosynthesises; yeast does not",
+      "Yeast has a cellulose wall; Mucor has chitin",
+      "Mucor is prokaryotic; yeast is eukaryotic"],a:0,
+   fb:"Yeast is the single-celled example; Mucor shows the typical mycelium of hyphae. Both are eukaryotic and neither photosynthesises."},
+  {q:"Which feature would let you tell an animal cell from a plant cell down a microscope?",
+   o:["The presence of a cell membrane","The presence of cytoplasm","The absence of a cell wall and chloroplasts","The presence of a nucleus"],a:2,
+   fb:"Animal cells have no cell wall and no chloroplasts. Membrane, cytoplasm and nucleus are in both, so none of those can separate them."}
+];
+
+const EXAM = [
+  {
+    q:"Give three differences in structure between a bacterial cell and a fungal cell.", m:3,
+    cue:"Each difference must make clear which organism you are describing.",
+    ms:["Bacterium has no nucleus / fungus has a nucleus (hyphae contain many nuclei)",
+        "Bacterium has a circular chromosome / fungus has chromosomes in a nucleus",
+        "Bacterium has plasmids / fungus does not",
+        "Bacterial cell wall is peptidoglycan / fungal cell wall is chitin",
+        "Bacterium is single-celled / fungus is usually a mycelium of hyphae",
+        "Bacterium is smaller than a fungal cell"],
+    warn:"Reversed differences and vague answers such as 'has a different cell wall' score nothing."
+  },
+  {
+    q:"State what is meant by saprotrophic nutrition.", m:2,
+    cue:"Two marks: one for the enzymes going out, one for the products coming in.",
+    ms:["Extracellular secretion of digestive enzymes onto the food material (1)",
+        "Absorption of the (soluble / digested) organic products (1)",
+        "Credit reference to feeding on dead or decaying material"],
+    warn:"'Absorbs its food' is not the same as absorbing the digested products."
+  },
+  {
+    q:"Explain why viruses are not classified as living organisms.", m:3,
+    cue:"Link each point back to a characteristic of living organisms.",
+    ms:["They have no cellular structure / are not made of cells (1)",
+        "They cannot reproduce independently — only inside a living host cell (1)",
+        "They do not respire / excrete / grow / require nutrition (1)",
+        "Credit: they are particles, smaller than bacteria, with only a protein coat and one nucleic acid"],
+    warn:"Saying only that viruses are 'parasites' does not explain why they are not alive — plenty of living organisms are parasites."
+  },
+  {
+    q:"Give two differences in structure between an Amoeba and a virus.", m:2,
+    cue:"Structure only. How the organism behaves will not be credited.",
+    ms:["Amoeba is larger / virus is smaller (1)",
+        "Amoeba has a cell membrane / virus has a protein coat (1)",
+        "Amoeba has cytoplasm / virus does not (1)",
+        "Amoeba has organelles such as a nucleus and mitochondria / virus has none (1)",
+        "Amoeba has DNA and RNA / virus has DNA or RNA only (1)"],
+    warn:"'A virus is an obligate parasite' is a difference in the way it lives, not in structure — it scores nothing here."
+  },
+  {
+    q:"Describe four common features shown by plants.", m:4,
+    cue:"Straight recall. Write short, separate points.",
+    ms:["Multicellular (1)",
+        "Cells contain chloroplasts / carry out photosynthesis (1)",
+        "Cells have cell walls made of cellulose (1)",
+        "Store carbohydrate as starch or sucrose (1)"],
+    warn:"'Plants are green' and 'plants have leaves' are not on the specification and gain nothing."
+  },
+  {
+    q:"Yeast is a single-celled fungus. Explain why yeast is still classified as a fungus.", m:3,
+    cue:"Use the group features that do not depend on being multicellular.",
+    ms:["It cannot photosynthesise / has no chloroplasts (1)",
+        "Its cell wall is made of chitin (1)",
+        "It feeds saprotrophically — secretes digestive enzymes and absorbs the products (1)",
+        "It is eukaryotic / has a nucleus (1)",
+        "It may store carbohydrate as glycogen (1)"],
+    warn:"Being single-celled is a reason it looks unusual for a fungus, not a reason it is one."
+  },
+  {
+    q:"Name one pathogenic protoctist and one pathogenic bacterium, and give the disease each one causes.", m:2,
+    cue:"Names and diseases must be paired correctly to gain the mark.",
+    ms:["Plasmodium — malaria (1)",
+        "Pneumococcus — pneumonia (1)"],
+    warn:"Spelling that changes the name (for example 'plasma') will not be credited."
+  },
+  {
+    q:"A student says: 'All microorganisms cause disease.' Explain why the student is wrong, using two named examples.", m:3,
+    cue:"You need the definition of a pathogen and two useful microorganisms.",
+    ms:["Only pathogens cause disease / most microorganisms are harmless (1)",
+        "Lactobacillus bulgaricus is used to make yoghurt from milk (1)",
+        "Yeast is used in bread making / brewing (1)",
+        "Credit: some bacteria photosynthesise, others decay dead material"],
+    warn:"Naming a pathogen such as Pneumococcus supports the student's claim rather than disproving it."
+  }
+];
+
+/* ------------------------------------------------------------------ state */
+
+const state = { rag:{}, quiz:{} };
+
+/* ------------------------------------------------------------------ build */
+
+function el(tag, cls, html){
+  const n = document.createElement(tag);
+  if(cls) n.className = cls;
+  if(html !== undefined) n.innerHTML = html;
+  return n;
+}
+
+// mnemonic
+(function(){
+  const box = document.getElementById("mnemonic");
+  MNEMONIC.forEach(function(m){
+    const c = el("div","mn");
+    c.appendChild(el("div","ltr",m[0]));
+    c.appendChild(el("div","wd",m[1]));
+    c.appendChild(el("div","de",m[2]));
+    box.appendChild(c);
+  });
+})();
+
+// group panels
+function renderGroups(list, target){
+  const box = document.getElementById(target);
+  list.forEach(function(g){
+    const wrap = el("div","group" + (g.dim ? " notliving" : ""));
+    const head = el("div","head");
+    const dot = el("span","dot"); dot.style.background = g.colour;
+    head.appendChild(dot);
+    head.appendChild(el("span","name",g.key));
+    head.appendChild(el("span","tag",g.tag + " &middot; " + g.ref));
+    wrap.appendChild(head);
+
+    const cols = el("div","cols");
+    const facts = el("div","facts");
+    const ul = el("ul");
+    g.facts.forEach(function(f){ ul.appendChild(el("li",null,f)); });
+    facts.appendChild(ul);
+    cols.appendChild(facts);
+
+    const eg = el("div","eg");
+    eg.appendChild(el("h4",null,"Named examples you must know"));
+    const dl = el("dl");
+    g.egs.forEach(function(e){
+      dl.appendChild(el("dt",null,e[0]));
+      dl.appendChild(el("dd",null,e[1]));
+    });
+    eg.appendChild(dl);
+    cols.appendChild(eg);
+
+    wrap.appendChild(cols);
+    box.appendChild(wrap);
+  });
+}
+renderGroups(GROUPS,"euk-groups");
+renderGroups(PRO,"pro-groups");
+
+// RAG rows
+function renderRag(id){
+  const box = document.getElementById(id);
+  RAG_ITEMS[id].forEach(function(item, i){
+    const key = id + ":" + i;
+    const row = el("div","stmt");
+    const body = el("div","body");
+    body.appendChild(el("span","ref","Spec " + item.ref));
+    body.appendChild(el("p",null,item.text));
+    row.appendChild(body);
+
+    const rag = el("div","rag");
+    rag.setAttribute("role","group");
+    rag.setAttribute("aria-label","Confidence rating");
+    ["R","A","G"].forEach(function(letter){
+      const b = el("button",null,letter);
+      b.type = "button";
+      b.setAttribute("aria-label",
+        (letter==="R"?"Red — not confident":letter==="A"?"Amber — nearly there":"Green — confident"));
+      b.addEventListener("click", function(){
+        if(state.rag[key] === letter){ delete state.rag[key]; }
+        else { state.rag[key] = letter; }
+        Array.prototype.forEach.call(rag.children, function(c){
+          c.removeAttribute("data-on");
+          c.setAttribute("aria-pressed","false");
+        });
+        if(state.rag[key]){
+          b.setAttribute("data-on",letter);
+          b.setAttribute("aria-pressed","true");
+        }
+        refreshSummary();
+      });
+      b.setAttribute("aria-pressed","false");
+      rag.appendChild(b);
+    });
+    row.appendChild(rag);
+    box.appendChild(row);
+  });
+}
+Object.keys(RAG_ITEMS).forEach(renderRag);
+
+// comparison table
+(function(){
+  const t = document.getElementById("cmp");
+  const thead = el("thead");
+  const hr = el("tr");
+  hr.appendChild(el("th",null,"Feature"));
+  CMP_COLS.forEach(function(c){
+    const th = el("th",null,'<span class="swatch" style="background:'+c[1]+'"></span>'+c[0]);
+    hr.appendChild(th);
+  });
+  thead.appendChild(hr);
+  t.appendChild(thead);
+
+  const tb = el("tbody");
+  CMP_ROWS.forEach(function(r){
+    const tr = el("tr");
+    tr.appendChild(el("th",null,r[0]));
+    r[1].forEach(function(v){
+      const td = el("td", (v === "—" || v.indexOf("No") === 0) ? "no" : null, v);
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+})();
+
+// quiz
+function renderQuiz(){
+  const box = document.getElementById("quiz-list");
+  box.innerHTML = "";
+  state.quiz = {};
+  QUIZ.forEach(function(item, qi){
+    const card = el("div","q");
+    card.appendChild(el("p","stem",'<span class="n">Q'+(qi+1)+'</span>'+item.q));
+    const opts = el("div","opts");
+    const buttons = [];
+    item.o.forEach(function(text, oi){
+      const b = el("button","opt",'<span class="letter">'+"ABCD"[oi]+'</span><span>'+text+'</span>');
+      b.type = "button";
+      b.addEventListener("click", function(){
+        if(state.quiz[qi] !== undefined) return;
+        state.quiz[qi] = oi;
+        buttons.forEach(function(x,xi){
+          x.disabled = true;
+          if(xi === item.a) x.setAttribute("data-state","correct");
+          else if(xi === oi) x.setAttribute("data-state","wrong");
+        });
+        fb.hidden = false;
+        fb.innerHTML = "<b>" + (oi === item.a ? "Correct. " : "Not quite. ") + "</b>" + item.fb;
+        refreshSummary();
+      });
+      buttons.push(b);
+      opts.appendChild(b);
+    });
+    card.appendChild(opts);
+    const fb = el("div","fb");
+    fb.hidden = true;
+    card.appendChild(fb);
+    box.appendChild(card);
+  });
+  refreshSummary();
+}
+renderQuiz();
+document.getElementById("quiz-reset").addEventListener("click", renderQuiz);
+
+// exam questions
+(function(){
+  const box = document.getElementById("exam-list");
+  EXAM.forEach(function(item, i){
+    const card = el("div","exam");
+    card.appendChild(el("p","stem",'<span class="marks">('+item.m+')</span>'+(i+1)+". "+item.q));
+    card.appendChild(el("p","cue",item.cue));
+    const ta = el("textarea");
+    ta.setAttribute("aria-label","Your answer to question " + (i+1));
+    ta.placeholder = "Write your answer here…";
+    card.appendChild(ta);
+
+    const ms = el("div","ms");
+    ms.hidden = true;
+    ms.appendChild(el("h4",null,"Mark scheme — award one mark per point, to a maximum of " + item.m));
+    const ul = el("ul");
+    item.ms.forEach(function(p){ ul.appendChild(el("li",null,p)); });
+    ms.appendChild(ul);
+    if(item.warn) ms.appendChild(el("p","warn","Watch out: " + item.warn));
+
+    const btn = el("button","reveal","Show the mark scheme");
+    btn.type = "button";
+    btn.addEventListener("click", function(){
+      ms.hidden = !ms.hidden;
+      btn.textContent = ms.hidden ? "Show the mark scheme" : "Hide the mark scheme";
+    });
+    card.appendChild(btn);
+    card.appendChild(ms);
+    box.appendChild(card);
+  });
+})();
+
+/* ------------------------------------------------------------------ summary */
+
+function refreshSummary(){
+  const counts = {R:0,A:0,G:0};
+  Object.keys(state.rag).forEach(function(k){ counts[state.rag[k]]++; });
+  const totalStmts = Object.keys(RAG_ITEMS).reduce(function(a,k){ return a + RAG_ITEMS[k].length; },0);
+  const answered = Object.keys(state.quiz).length;
+  let correct = 0;
+  Object.keys(state.quiz).forEach(function(k){ if(state.quiz[k] === QUIZ[k].a) correct++; });
+
+  const score = document.getElementById("summary-score");
+  score.innerHTML = "";
+  [
+    ["", correct + " / " + (answered || 0), answered ? "quiz questions correct so far" : "no quiz questions answered yet"],
+    ["r", counts.R, "statements rated red"],
+    ["a", counts.A, "statements rated amber"],
+    ["g", counts.G, "statements rated green"],
+    ["", (totalStmts - counts.R - counts.A - counts.G), "statements not yet rated"]
+  ].forEach(function(s){
+    const d = el("div","stat " + s[0]);
+    d.appendChild(el("div","big",String(s[1])));
+    d.appendChild(el("div","lab",s[2]));
+    score.appendChild(d);
+  });
+
+  // priority list
+  const todo = document.getElementById("summary-todo");
+  todo.innerHTML = "";
+  todo.appendChild(el("h3",null,"Go back to these first"));
+  const reds = [], ambers = [];
+  Object.keys(RAG_ITEMS).forEach(function(id){
+    RAG_ITEMS[id].forEach(function(item,i){
+      const v = state.rag[id + ":" + i];
+      if(v === "R") reds.push(item);
+      else if(v === "A") ambers.push(item);
+    });
+  });
+  if(!reds.length && !ambers.length){
+    todo.appendChild(el("p","empty","Rate the statements on the first three tabs and anything you mark red or amber will be listed here."));
+  } else {
+    const ol = el("ol");
+    reds.concat(ambers).forEach(function(item){
+      ol.appendChild(el("li",null,item.text + ' <span class="ref">(spec ' + item.ref + ')</span>'));
+    });
+    todo.appendChild(ol);
+  }
+
+  // quiz errors
+  const qbox = document.getElementById("summary-quiz");
+  qbox.innerHTML = "";
+  qbox.appendChild(el("h3",null,"Quiz questions you got wrong"));
+  const wrong = Object.keys(state.quiz).filter(function(k){ return state.quiz[k] !== QUIZ[k].a; });
+  if(!answered){
+    qbox.appendChild(el("p","empty","Nothing yet — the quick check is on the previous tab."));
+  } else if(!wrong.length){
+    qbox.appendChild(el("p","empty","None so far. Keep going."));
+  } else {
+    const ol = el("ol");
+    wrong.forEach(function(k){
+      ol.appendChild(el("li",null,QUIZ[k].q + '<br><span class="ref">' + QUIZ[k].fb + '</span>'));
+    });
+    qbox.appendChild(ol);
+  }
+}
+
+document.getElementById("print").addEventListener("click", function(){ window.print(); });
+document.getElementById("reset-all").addEventListener("click", function(){
+  state.rag = {};
+  document.querySelectorAll(".rag button").forEach(function(b){
+    b.removeAttribute("data-on");
+    b.setAttribute("aria-pressed","false");
+  });
+  renderQuiz();
+  document.querySelectorAll(".exam textarea").forEach(function(t){ t.value = ""; });
+  document.querySelectorAll(".ms").forEach(function(m){ m.hidden = true; });
+  document.querySelectorAll(".reveal").forEach(function(b){ b.textContent = "Show the mark scheme"; });
+  refreshSummary();
+});
+
+/* ------------------------------------------------------------------ tabs */
+
+const tabButtons = Array.prototype.slice.call(document.querySelectorAll("nav.tabs button"));
+const panels = Array.prototype.slice.call(document.querySelectorAll(".panel"));
+
+function showTab(id){
+  tabButtons.forEach(function(b){
+    b.setAttribute("aria-selected", String(b.dataset.tab === id));
+  });
+  panels.forEach(function(p){ p.hidden = (p.id !== id); });
+  window.scrollTo({top:0, behavior:"auto"});
+}
+tabButtons.forEach(function(b){
+  b.addEventListener("click", function(){ showTab(b.dataset.tab); });
+});
+showTab("characteristics");
+refreshSummary();
+</script>
+</body>
+</html>
